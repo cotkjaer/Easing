@@ -7,12 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FCE6ACF1C7CB9530079A587 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6ACE1C7CB9530079A587 /* AppDelegate.swift */; };
+		8FCE6AD61C7CB9530079A587 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FCE6AD51C7CB9530079A587 /* Assets.xcassets */; };
+		8FCE6AD91C7CB9530079A587 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FCE6AD71C7CB9530079A587 /* LaunchScreen.storyboard */; };
+		8FCE6AE11C7CB9770079A587 /* Plot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FCE6ADE1C7CB9770079A587 /* Plot.storyboard */; };
+		8FCE6AE21C7CB9770079A587 /* PlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6ADF1C7CB9770079A587 /* PlotViewController.swift */; };
+		8FCE6AE31C7CB9770079A587 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCE6AE01C7CB9770079A587 /* PlotView.swift */; };
+		8FCE6AE41C7CBD390079A587 /* Easing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD8743F1C760E2000181FA6 /* Easing.framework */; };
+		8FCE6AE51C7CBD390079A587 /* Easing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD8743F1C760E2000181FA6 /* Easing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FD874431C760E2000181FA6 /* Easing.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FD874421C760E2000181FA6 /* Easing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8FD8744A1C760E2000181FA6 /* Easing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD8743F1C760E2000181FA6 /* Easing.framework */; };
 		8FD8744F1C760E2000181FA6 /* EasingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD8744E1C760E2000181FA6 /* EasingTests.swift */; };
+		8FD8745A1C760E2E00181FA6 /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD874591C760E2E00181FA6 /* Timing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8FCE6AE61C7CBD390079A587 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FD874361C760E2000181FA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FD8743E1C760E2000181FA6;
+			remoteInfo = Easing;
+		};
 		8FD8744B1C760E2000181FA6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8FD874361C760E2000181FA6 /* Project object */;
@@ -22,16 +38,47 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8FCE6AE81C7CBD390079A587 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8FCE6AE51C7CBD390079A587 /* Easing.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		8FCE6ACC1C7CB9530079A587 /* EasingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FCE6ACE1C7CB9530079A587 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8FCE6AD51C7CB9530079A587 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8FCE6AD81C7CB9530079A587 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8FCE6ADA1C7CB9530079A587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FCE6ADE1C7CB9770079A587 /* Plot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Plot.storyboard; sourceTree = "<group>"; };
+		8FCE6ADF1C7CB9770079A587 /* PlotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotViewController.swift; sourceTree = "<group>"; };
+		8FCE6AE01C7CB9770079A587 /* PlotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotView.swift; sourceTree = "<group>"; };
 		8FD8743F1C760E2000181FA6 /* Easing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Easing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD874421C760E2000181FA6 /* Easing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Easing.h; sourceTree = "<group>"; };
 		8FD874441C760E2000181FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FD874491C760E2000181FA6 /* EasingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD8744E1C760E2000181FA6 /* EasingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasingTests.swift; sourceTree = "<group>"; };
 		8FD874501C760E2000181FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FD874591C760E2E00181FA6 /* Timing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8FCE6AC91C7CB9530079A587 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FCE6AE41C7CBD390079A587 /* Easing.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FD8743B1C760E2000181FA6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,11 +97,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8FCE6ACD1C7CB9530079A587 /* EasingDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8FCE6ACE1C7CB9530079A587 /* AppDelegate.swift */,
+				8FCE6ADE1C7CB9770079A587 /* Plot.storyboard */,
+				8FCE6ADF1C7CB9770079A587 /* PlotViewController.swift */,
+				8FCE6AE01C7CB9770079A587 /* PlotView.swift */,
+				8FCE6AD51C7CB9530079A587 /* Assets.xcassets */,
+				8FCE6AD71C7CB9530079A587 /* LaunchScreen.storyboard */,
+				8FCE6ADA1C7CB9530079A587 /* Info.plist */,
+			);
+			path = EasingDemo;
+			sourceTree = "<group>";
+		};
 		8FD874351C760E2000181FA6 = {
 			isa = PBXGroup;
 			children = (
 				8FD874411C760E2000181FA6 /* Easing */,
 				8FD8744D1C760E2000181FA6 /* EasingTests */,
+				8FCE6ACD1C7CB9530079A587 /* EasingDemo */,
 				8FD874401C760E2000181FA6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +126,7 @@
 			children = (
 				8FD8743F1C760E2000181FA6 /* Easing.framework */,
 				8FD874491C760E2000181FA6 /* EasingTests.xctest */,
+				8FCE6ACC1C7CB9530079A587 /* EasingDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +134,7 @@
 		8FD874411C760E2000181FA6 /* Easing */ = {
 			isa = PBXGroup;
 			children = (
+				8FD874591C760E2E00181FA6 /* Timing.swift */,
 				8FD874421C760E2000181FA6 /* Easing.h */,
 				8FD874441C760E2000181FA6 /* Info.plist */,
 			);
@@ -100,6 +164,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		8FCE6ACB1C7CB9530079A587 /* EasingDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FCE6ADD1C7CB9530079A587 /* Build configuration list for PBXNativeTarget "EasingDemo" */;
+			buildPhases = (
+				8FCE6AC81C7CB9530079A587 /* Sources */,
+				8FCE6AC91C7CB9530079A587 /* Frameworks */,
+				8FCE6ACA1C7CB9530079A587 /* Resources */,
+				8FCE6AE81C7CBD390079A587 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FCE6AE71C7CBD390079A587 /* PBXTargetDependency */,
+			);
+			name = EasingDemo;
+			productName = EasingDemo;
+			productReference = 8FCE6ACC1C7CB9530079A587 /* EasingDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		8FD8743E1C760E2000181FA6 /* Easing */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8FD874531C760E2000181FA6 /* Build configuration list for PBXNativeTarget "Easing" */;
@@ -146,8 +229,13 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Christian Otkjær";
 				TargetAttributes = {
+					8FCE6ACB1C7CB9530079A587 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9HQR3Y4WE5;
+					};
 					8FD8743E1C760E2000181FA6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9HQR3Y4WE5;
 					};
 					8FD874481C760E2000181FA6 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -160,6 +248,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 8FD874351C760E2000181FA6;
 			productRefGroup = 8FD874401C760E2000181FA6 /* Products */;
@@ -168,11 +257,22 @@
 			targets = (
 				8FD8743E1C760E2000181FA6 /* Easing */,
 				8FD874481C760E2000181FA6 /* EasingTests */,
+				8FCE6ACB1C7CB9530079A587 /* EasingDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8FCE6ACA1C7CB9530079A587 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FCE6AD91C7CB9530079A587 /* LaunchScreen.storyboard in Resources */,
+				8FCE6AE11C7CB9770079A587 /* Plot.storyboard in Resources */,
+				8FCE6AD61C7CB9530079A587 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FD8743D1C760E2000181FA6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,10 +290,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8FCE6AC81C7CB9530079A587 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FCE6AE21C7CB9770079A587 /* PlotViewController.swift in Sources */,
+				8FCE6ACF1C7CB9530079A587 /* AppDelegate.swift in Sources */,
+				8FCE6AE31C7CB9770079A587 /* PlotView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FD8743A1C760E2000181FA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FD8745A1C760E2E00181FA6 /* Timing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +319,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8FCE6AE71C7CBD390079A587 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FD8743E1C760E2000181FA6 /* Easing */;
+			targetProxy = 8FCE6AE61C7CBD390079A587 /* PBXContainerItemProxy */;
+		};
 		8FD8744C1C760E2000181FA6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8FD8743E1C760E2000181FA6 /* Easing */;
@@ -215,7 +331,48 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		8FCE6AD71C7CB9530079A587 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8FCE6AD81C7CB9530079A587 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		8FCE6ADB1C7CB9530079A587 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = EasingDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.EasingDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		8FCE6ADC1C7CB9530079A587 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = EasingDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.EasingDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
 		8FD874511C760E2000181FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -308,6 +465,9 @@
 		8FD874541C760E2000181FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +478,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.Easing";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8FD874551C760E2000181FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -360,6 +524,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8FCE6ADD1C7CB9530079A587 /* Build configuration list for PBXNativeTarget "EasingDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FCE6ADB1C7CB9530079A587 /* Debug */,
+				8FCE6ADC1C7CB9530079A587 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		8FD874391C760E2000181FA6 /* Build configuration list for PBXProject "Easing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -376,6 +548,7 @@
 				8FD874551C760E2000181FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FD874561C760E2000181FA6 /* Build configuration list for PBXNativeTarget "EasingTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +557,7 @@
 				8FD874581C760E2000181FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

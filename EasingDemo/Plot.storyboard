@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PsK-B0-Tg5">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Plot View Controller-->
+        <scene sceneID="WTE-W2-t2a">
+            <objects>
+                <viewController id="PsK-B0-Tg5" customClass="PlotViewController" customModule="EasingDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rbm-Tk-c0B"/>
+                        <viewControllerLayoutGuide type="bottom" id="H8S-JE-lt7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ve1-NU-StZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFG-0R-1Eh">
+                                <rect key="frame" x="20" y="28" width="560" height="488"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XIn-En-u1X" customClass="PlotView" customModule="EasingDemo" customModuleProvider="target">
+                                        <rect key="frame" x="36" y="0.0" width="488" height="488"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="XIn-En-u1X" secondAttribute="height" multiplier="1:1" id="Dab-o1-7bi"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XIn-En-u1X" secondAttribute="trailing" priority="900" id="0yz-Jq-8sZ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XIn-En-u1X" secondAttribute="trailing" id="7Xc-ol-f6x"/>
+                                    <constraint firstItem="XIn-En-u1X" firstAttribute="centerX" secondItem="dFG-0R-1Eh" secondAttribute="centerX" id="Kj8-te-3bQ"/>
+                                    <constraint firstItem="XIn-En-u1X" firstAttribute="top" secondItem="dFG-0R-1Eh" secondAttribute="top" priority="900" id="Ucl-sY-qh9"/>
+                                    <constraint firstItem="XIn-En-u1X" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dFG-0R-1Eh" secondAttribute="top" id="sSF-dv-5O4"/>
+                                    <constraint firstItem="XIn-En-u1X" firstAttribute="centerY" secondItem="dFG-0R-1Eh" secondAttribute="centerY" id="y0G-8Q-xfm"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MVO-IB-FFC">
+                                <rect key="frame" x="-149" y="525" width="899" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JUl-fM-KNH"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Linear"/>
+                                    <segment title="Quadratic"/>
+                                    <segment title="Cubic"/>
+                                    <segment title="Quartic"/>
+                                    <segment title="Quintic"/>
+                                    <segment title="Sine"/>
+                                    <segment title="Circular"/>
+                                    <segment title="Exp(o)"/>
+                                    <segment title="Cubic(o)"/>
+                                    <segment title="Elastic(o)"/>
+                                    <segment title="Bounce"/>
+                                    <segment title="None"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handleEaseInChange:" destination="PsK-B0-Tg5" eventType="valueChanged" id="t4f-Um-ts3"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-1K-MDD">
+                                <rect key="frame" x="-150" y="563" width="899" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="h7z-TO-DdE"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Linear"/>
+                                    <segment title="Quadratic"/>
+                                    <segment title="Cubic"/>
+                                    <segment title="Quartic"/>
+                                    <segment title="Quintic"/>
+                                    <segment title="Sine"/>
+                                    <segment title="Circular"/>
+                                    <segment title="Exp(o)"/>
+                                    <segment title="Cubic(o)"/>
+                                    <segment title="Elastic(o)"/>
+                                    <segment title="Bounce"/>
+                                    <segment title="None"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handleEaseOutChange:" destination="PsK-B0-Tg5" eventType="valueChanged" id="r4s-bY-MQF"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H8S-JE-lt7" firstAttribute="top" secondItem="ehr-1K-MDD" secondAttribute="bottom" constant="8" symbolic="YES" id="072-sL-T9k"/>
+                            <constraint firstItem="ehr-1K-MDD" firstAttribute="top" secondItem="MVO-IB-FFC" secondAttribute="bottom" constant="8" symbolic="YES" id="Dgb-Y6-xIN"/>
+                            <constraint firstItem="MVO-IB-FFC" firstAttribute="centerX" secondItem="ve1-NU-StZ" secondAttribute="centerX" id="Xfz-JL-lRT"/>
+                            <constraint firstItem="H8S-JE-lt7" firstAttribute="top" secondItem="dFG-0R-1Eh" secondAttribute="bottom" constant="8" symbolic="YES" id="aL1-Wq-fOL"/>
+                            <constraint firstItem="MVO-IB-FFC" firstAttribute="top" secondItem="dFG-0R-1Eh" secondAttribute="bottom" constant="8" symbolic="YES" id="fHl-6Q-lVh"/>
+                            <constraint firstItem="dFG-0R-1Eh" firstAttribute="leading" secondItem="ve1-NU-StZ" secondAttribute="leadingMargin" id="hZ7-Ev-lBe"/>
+                            <constraint firstItem="ehr-1K-MDD" firstAttribute="centerX" secondItem="ve1-NU-StZ" secondAttribute="centerX" id="hgn-rf-GgK"/>
+                            <constraint firstItem="dFG-0R-1Eh" firstAttribute="top" secondItem="rbm-Tk-c0B" secondAttribute="bottom" constant="8" symbolic="YES" id="jzc-Kx-eDY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dFG-0R-1Eh" secondAttribute="trailing" id="rLD-aR-f4U"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aL1-Wq-fOL"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="plotView" destination="XIn-En-u1X" id="mMk-3E-lid"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VxB-NH-DlD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="585" y="435"/>
+        </scene>
+    </scenes>
+</document>

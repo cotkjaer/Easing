@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>EasingDemo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>8FCE6ACB1C7CB9530079A587</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8FD8743E1C760E2000181FA6</key>
 		<dict>
 			<key>primary</key>
