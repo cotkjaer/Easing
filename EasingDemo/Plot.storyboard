@@ -40,62 +40,65 @@
                                     <constraint firstItem="XIn-En-u1X" firstAttribute="centerY" secondItem="dFG-0R-1Eh" secondAttribute="centerY" id="y0G-8Q-xfm"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MVO-IB-FFC">
-                                <rect key="frame" x="-149" y="525" width="899" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="JUl-fM-KNH"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Linear"/>
-                                    <segment title="Quadratic"/>
-                                    <segment title="Cubic"/>
-                                    <segment title="Quartic"/>
-                                    <segment title="Quintic"/>
-                                    <segment title="Sine"/>
-                                    <segment title="Circular"/>
-                                    <segment title="Exp(o)"/>
-                                    <segment title="Cubic(o)"/>
-                                    <segment title="Elastic(o)"/>
-                                    <segment title="Bounce"/>
-                                    <segment title="None"/>
-                                </segments>
-                                <connections>
-                                    <action selector="handleEaseInChange:" destination="PsK-B0-Tg5" eventType="valueChanged" id="t4f-Um-ts3"/>
-                                </connections>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-1K-MDD">
-                                <rect key="frame" x="-150" y="563" width="899" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="h7z-TO-DdE"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Linear"/>
-                                    <segment title="Quadratic"/>
-                                    <segment title="Cubic"/>
-                                    <segment title="Quartic"/>
-                                    <segment title="Quintic"/>
-                                    <segment title="Sine"/>
-                                    <segment title="Circular"/>
-                                    <segment title="Exp(o)"/>
-                                    <segment title="Cubic(o)"/>
-                                    <segment title="Elastic(o)"/>
-                                    <segment title="Bounce"/>
-                                    <segment title="None"/>
-                                </segments>
-                                <connections>
-                                    <action selector="handleEaseOutChange:" destination="PsK-B0-Tg5" eventType="valueChanged" id="r4s-bY-MQF"/>
-                                </connections>
-                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Rg-lX-Odm">
+                                <rect key="frame" x="-149" y="524" width="899" height="68"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MVO-IB-FFC">
+                                        <rect key="frame" x="0.0" y="0.0" width="899" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="JUl-fM-KNH"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Linear"/>
+                                            <segment title="Quadratic"/>
+                                            <segment title="Cubic"/>
+                                            <segment title="Quartic"/>
+                                            <segment title="Quintic"/>
+                                            <segment title="Sine"/>
+                                            <segment title="Circular"/>
+                                            <segment title="Exp(o)"/>
+                                            <segment title="Cubic(o)"/>
+                                            <segment title="Elastic(o)"/>
+                                            <segment title="Bounce"/>
+                                            <segment title="None"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="handleEaseInChange:" destination="PsK-B0-Tg5" eventType="valueChanged" id="t4f-Um-ts3"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-1K-MDD">
+                                        <rect key="frame" x="0.0" y="38" width="899" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="h7z-TO-DdE"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Linear"/>
+                                            <segment title="Quadratic"/>
+                                            <segment title="Cubic"/>
+                                            <segment title="Quartic"/>
+                                            <segment title="Quintic"/>
+                                            <segment title="Sine"/>
+                                            <segment title="Circular"/>
+                                            <segment title="Exp(o)"/>
+                                            <segment title="Cubic(o)"/>
+                                            <segment title="Elastic(o)"/>
+                                            <segment title="Bounce"/>
+                                            <segment title="None"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="handleEaseOutChange:" destination="PsK-B0-Tg5" eventType="valueChanged" id="r4s-bY-MQF"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="H8S-JE-lt7" firstAttribute="top" secondItem="ehr-1K-MDD" secondAttribute="bottom" constant="8" symbolic="YES" id="072-sL-T9k"/>
-                            <constraint firstItem="ehr-1K-MDD" firstAttribute="top" secondItem="MVO-IB-FFC" secondAttribute="bottom" constant="8" symbolic="YES" id="Dgb-Y6-xIN"/>
-                            <constraint firstItem="MVO-IB-FFC" firstAttribute="centerX" secondItem="ve1-NU-StZ" secondAttribute="centerX" id="Xfz-JL-lRT"/>
+                            <constraint firstItem="3Rg-lX-Odm" firstAttribute="centerX" secondItem="ve1-NU-StZ" secondAttribute="centerX" id="XaN-1Y-KO6"/>
                             <constraint firstItem="H8S-JE-lt7" firstAttribute="top" secondItem="dFG-0R-1Eh" secondAttribute="bottom" constant="8" symbolic="YES" id="aL1-Wq-fOL"/>
-                            <constraint firstItem="MVO-IB-FFC" firstAttribute="top" secondItem="dFG-0R-1Eh" secondAttribute="bottom" constant="8" symbolic="YES" id="fHl-6Q-lVh"/>
+                            <constraint firstItem="H8S-JE-lt7" firstAttribute="top" secondItem="3Rg-lX-Odm" secondAttribute="bottom" constant="8" symbolic="YES" id="dy0-Af-f1x"/>
+                            <constraint firstItem="3Rg-lX-Odm" firstAttribute="top" secondItem="dFG-0R-1Eh" secondAttribute="bottom" constant="8" symbolic="YES" id="hSU-et-bAy"/>
                             <constraint firstItem="dFG-0R-1Eh" firstAttribute="leading" secondItem="ve1-NU-StZ" secondAttribute="leadingMargin" id="hZ7-Ev-lBe"/>
-                            <constraint firstItem="ehr-1K-MDD" firstAttribute="centerX" secondItem="ve1-NU-StZ" secondAttribute="centerX" id="hgn-rf-GgK"/>
                             <constraint firstItem="dFG-0R-1Eh" firstAttribute="top" secondItem="rbm-Tk-c0B" secondAttribute="bottom" constant="8" symbolic="YES" id="jzc-Kx-eDY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dFG-0R-1Eh" secondAttribute="trailing" id="rLD-aR-f4U"/>
                         </constraints>

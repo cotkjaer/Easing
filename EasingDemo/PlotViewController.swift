@@ -15,12 +15,6 @@ class PlotViewController: UIViewController
     
     var timingFunction = TimingFunction()
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-    }
-    
     let curves : Array<EasingCurve> =
     [
         .Linear, // 0
@@ -67,18 +61,6 @@ class PlotViewController: UIViewController
         handleChange(sender.selectedSegmentIndex) {
             timingFunction.easeOut = $0
         }
-    }
-    
-    
-    @IBAction func handleButton(button: UIButton)
-    {
-        button.selected = !button.selected
-        
-        timingFunction.easeIn = curves[button.tag]
-    
-        let color = button.tintColor
-
-        updatePlot(button.selected, color: color, function: timingFunction.function)
     }
     
     func updatePlot(add: Bool, color: UIColor, function: Double->Double)
