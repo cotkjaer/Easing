@@ -33,45 +33,45 @@ public enum EasingCurve
     case Custom(Double -> Double)
     
     var function : Double -> Double
+    {
+        switch self
         {
-            switch self
-            {
-            case .Linear:
-                return { $0 }
-                
-            case .Quadratic:
-                return { $0 * $0 }
-                
-            case .Cubic:
-                return { $0 * $0 * $0 }
-                
-            case .Quartic:
-                return { $0 * $0 * $0 * $0 }
-                
-            case .Quintic:
-                return { $0 * $0 * $0 * $0 * $0 }
-                
-            case .Sine:
-                return { 1 - sin(π_11_8 + $0 * π_5_8) / sin_π_11_8 }
-                
-            case .Circular:
-                return { 1 - sqrt(1 - $0 * $0) }
-                
-            case .Exponential:
-                return { $0 == 0 ? $0 : pow(2, 10 * ($0 - 1)) }
-                
-            case .Elastic:
-                return { sin(π_13_2 * $0) * pow(2, 10 * ($0 - 1)) }
-                
-            case .Bounce:
-                return { abs (-(sin(π_13_2 * $0) * pow(2, 10 * ($0 - 1)))) }
-                
-            case .OvershootingCubic:
-                return { $0 * $0 * $0 - $0 * sin($0 * π) }
-                
-            case .Custom(let f):
-                return f
-            }
+        case .Linear:
+            return { $0 }
+            
+        case .Quadratic:
+            return { $0 * $0 }
+            
+        case .Cubic:
+            return { $0 * $0 * $0 }
+            
+        case .Quartic:
+            return { $0 * $0 * $0 * $0 }
+            
+        case .Quintic:
+            return { $0 * $0 * $0 * $0 * $0 }
+            
+        case .Sine:
+            return { 1 - sin(π_11_8 + $0 * π_5_8) / sin_π_11_8 }
+            
+        case .Circular:
+            return { 1 - sqrt(1 - $0 * $0) }
+            
+        case .Exponential:
+            return { $0 == 0 ? $0 : pow(2, 10 * ($0 - 1)) }
+            
+        case .Elastic:
+            return { sin(π_13_2 * $0) * pow(2, 10 * ($0 - 1)) }
+            
+        case .Bounce:
+            return { abs (-(sin(π_13_2 * $0) * pow(2, 10 * ($0 - 1)))) }
+            
+        case .OvershootingCubic:
+            return { $0 * $0 * $0 - $0 * sin($0 * π) }
+            
+        case .Custom(let f):
+            return f
+        }
     }
 }
 
@@ -92,16 +92,15 @@ public enum EasingMode
             return { 1 - curve.function(1 - $0) }
             
         case .EaseInOut:
-            return
+            return {
+                if $0 < 0.5
                 {
-                    if $0 < 0.5
-                    {
-                        return curve.function($0 * 2) / 2
-                    }
-                    else
-                    {
-                        return (1 - curve.function((1 - $0) * 2)) / 2
-                    }
+                    return curve.function($0 * 2) / 2
+                }
+                else
+                {
+                    return (1 - curve.function((1 - $0) * 2)) / 2
+                }
             }
         }
     }
@@ -113,41 +112,39 @@ public struct TimingFunction
     public var easeOut: EasingCurve?
     
     public init(easeIn: EasingCurve? = nil,
-        easeOut: EasingCurve? = nil)
+                easeOut: EasingCurve? = nil)
     {
         self.easeIn = easeIn
         self.easeOut = easeOut
     }
     
     public var function : Double -> Double
+    {
+        if let easeIn = easeIn
         {
-            if let easeIn = easeIn
-            {
-                if let easeOut = easeOut
-                {
-                    return
-                        {
-                            if $0 < 0.5
-                            {
-                                return easeIn.function($0 * 2) / 2
-                            }
-                            else
-                            {
-                                return 1 - easeOut.function((1 - $0) * 2) / 2
-                            }
-                    }
-                }
-                
-                return easeIn.function
-            }
-            
             if let easeOut = easeOut
             {
-                return { 1 - easeOut.function(1 - $0) }
+                return
+                    {
+                        if $0 < 0.5
+                        {
+                            return easeIn.function($0 * 2) / 2
+                        }
+                        else
+                        {
+                            return 1 - easeOut.function((1 - $0) * 2) / 2
+                        }
+                }
             }
             
-            return EasingCurve.Linear.function
-            
-            //        return mode.functionForCurve(curve)
+            return easeIn.function
+        }
+        
+        if let easeOut = easeOut
+        {
+            return { 1 - easeOut.function(1 - $0) }
+        }
+        
+        return EasingCurve.Linear.function
     }
 }
