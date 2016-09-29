@@ -10,9 +10,9 @@ import UIKit
 
 class PlotView: UIView
 {
-    var functions = Array<(UIColor, Double->Double)>()
+    var functions = Array<(UIColor, (Double)->Double)>()
     
-    override func drawRect(rect: CGRect)
+    override func draw(_ rect: CGRect)
     {
         let length = Double(min(bounds.width, bounds.height))
         let width = 2 * Double(length) / 3
@@ -26,7 +26,7 @@ class PlotView: UIView
         {
             var values = Array<Double>()
             
-            for t in Double(0).stride(through: width, by: 1)
+            for t in stride(from: Double(0), through: width, by: 1)
             {
                 values.append(function(t/width))
             }
@@ -38,11 +38,11 @@ class PlotView: UIView
             
             let path = UIBezierPath()
             
-            path.moveToPoint(CGPoint(x: offset.x + 0, y: offset.y + CGFloat((1 - values[0]) * width)))
+            path.move(to: CGPoint(x: offset.x + 0, y: offset.y + CGFloat((1 - values[0]) * width)))
             
-            for (i, v) in values.enumerate()
+            for (i, v) in values.enumerated()
             {
-                path.addLineToPoint(CGPoint(x: offset.x + CGFloat(i), y: offset.y + CGFloat((1 - v) * width)))
+                path.addLine(to: CGPoint(x: offset.x + CGFloat(i), y: offset.y + CGFloat((1 - v) * width)))
             }
             
             path.lineWidth = 1

@@ -19,57 +19,57 @@ private let sin_π_11_8 = sin(π_11_8)
 
 public enum EasingCurve
 {
-    case Linear
-    case Quadratic
-    case Cubic
-    case Quartic
-    case Quintic
-    case Sine
-    case Circular
-    case Exponential
-    case Elastic
-    case OvershootingCubic
-    case Bounce
-    case Custom(Double -> Double)
+    case linear
+    case quadratic
+    case cubic
+    case quartic
+    case quintic
+    case sine
+    case circular
+    case exponential
+    case elastic
+    case overshootingCubic
+    case bounce
+    case custom((Double) -> Double)
     
-    var function : Double -> Double
+    var function : (Double) -> Double
     {
         switch self
         {
-        case .Linear:
+        case .linear:
             return { $0 }
             
-        case .Quadratic:
+        case .quadratic:
             return { $0 * $0 }
             
-        case .Cubic:
+        case .cubic:
             return { $0 * $0 * $0 }
             
-        case .Quartic:
+        case .quartic:
             return { $0 * $0 * $0 * $0 }
             
-        case .Quintic:
+        case .quintic:
             return { $0 * $0 * $0 * $0 * $0 }
             
-        case .Sine:
+        case .sine:
             return { 1 - sin(π_11_8 + $0 * π_5_8) / sin_π_11_8 }
             
-        case .Circular:
+        case .circular:
             return { 1 - sqrt(1 - $0 * $0) }
             
-        case .Exponential:
+        case .exponential:
             return { $0 == 0 ? $0 : pow(2, 10 * ($0 - 1)) }
             
-        case .Elastic:
+        case .elastic:
             return { sin(π_13_2 * $0) * pow(2, 10 * ($0 - 1)) }
             
-        case .Bounce:
+        case .bounce:
             return { abs (-(sin(π_13_2 * $0) * pow(2, 10 * ($0 - 1)))) }
             
-        case .OvershootingCubic:
+        case .overshootingCubic:
             return { $0 * $0 * $0 - $0 * sin($0 * π) }
             
-        case .Custom(let f):
+        case .custom(let f):
             return f
         }
     }
@@ -77,21 +77,21 @@ public enum EasingCurve
 
 public enum EasingMode
 {
-    case EaseIn
-    case EaseOut
-    case EaseInOut
+    case easeIn
+    case easeOut
+    case easeInOut
     
-    func functionForCurve(curve: EasingCurve) -> (Double -> Double)
+    func functionForCurve(_ curve: EasingCurve) -> ((Double) -> Double)
     {
         switch self
         {
-        case .EaseIn:
+        case .easeIn:
             return curve.function
             
-        case .EaseOut:
+        case .easeOut:
             return { 1 - curve.function(1 - $0) }
             
-        case .EaseInOut:
+        case .easeInOut:
             return {
                 if $0 < 0.5
                 {
@@ -118,7 +118,7 @@ public struct TimingFunction
         self.easeOut = easeOut
     }
     
-    public var function : Double -> Double
+    public var function : (Double) -> Double
     {
         if let easeIn = easeIn
         {
@@ -145,6 +145,6 @@ public struct TimingFunction
             return { 1 - easeOut.function(1 - $0) }
         }
         
-        return EasingCurve.Linear.function
+        return EasingCurve.linear.function
     }
 }

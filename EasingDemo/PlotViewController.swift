@@ -17,20 +17,20 @@ class PlotViewController: UIViewController
     
     let curves : Array<EasingCurve> =
     [
-        .Linear, // 0
-        .Quadratic,
-        .Cubic,
-        .Quartic,
-        .Quintic,
-        .Sine, // 5
-        .Circular,
-        .Exponential,
-        .OvershootingCubic,
-        .Elastic,
-        .Bounce
+        .linear, // 0
+        .quadratic,
+        .cubic,
+        .quartic,
+        .quintic,
+        .sine, // 5
+        .circular,
+        .exponential,
+        .overshootingCubic,
+        .elastic,
+        .bounce
     ]
     
-    func handleChange(index: Int, @noescape closure: (EasingCurve?)->())
+    func handleChange(_ index: Int, closure: (EasingCurve?)->())
     {
         if index < 0 || index >= curves.count
         {
@@ -43,12 +43,12 @@ class PlotViewController: UIViewController
         
         let color = view.tintColor
         
-        updatePlot(false, color: color, function: timingFunction.function)
+        updatePlot(false, color: color!, function: timingFunction.function)
         
-        updatePlot(true, color: color, function: timingFunction.function)
+        updatePlot(true, color: color!, function: timingFunction.function)
     }
     
-    @IBAction func handleEaseInChange(sender: UISegmentedControl)
+    @IBAction func handleEaseInChange(_ sender: UISegmentedControl)
     {
         handleChange(sender.selectedSegmentIndex) {
             timingFunction.easeIn = $0
@@ -56,22 +56,22 @@ class PlotViewController: UIViewController
     }
     
     
-    @IBAction func handleEaseOutChange(sender: UISegmentedControl)
+    @IBAction func handleEaseOutChange(_ sender: UISegmentedControl)
     {
         handleChange(sender.selectedSegmentIndex) {
             timingFunction.easeOut = $0
         }
     }
     
-    func updatePlot(add: Bool, color: UIColor, function: Double->Double)
+    func updatePlot(_ add: Bool, color: UIColor, function: @escaping (Double)->Double)
     {
         if add
         {
             plotView?.functions.append((color, function))
         }
-        else if let index = plotView?.functions.indexOf({ $0.0 == color })
+        else if let index = plotView?.functions.index(where: { $0.0 == color })
         {
-            plotView?.functions.removeAtIndex(index)
+            plotView?.functions.remove(at: index)
         }
         
         plotView?.setNeedsDisplay()
