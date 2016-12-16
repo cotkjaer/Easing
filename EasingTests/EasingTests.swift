@@ -11,18 +11,12 @@ import XCTest
 
 class EasingTests: XCTestCase
 {
-    func test_linear()
+    func test_ends()
     {
-        let easingCurve = EasingCurve.linear
-        
-        XCTAssertEquals(easingCurve.function(0), 0)
-    }
-    
-    func testPerformanceExample()
-    {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        for easingCurve : EasingCurve in [.linear, .sine, .bounce, .circular, .cubic, .elastic]
+        {
+            XCTAssertEqualWithAccuracy(easingCurve.function(0), 0, accuracy: 0.0001)
+            XCTAssertEqualWithAccuracy(easingCurve.function(1), 1, accuracy: 0.0001)
         }
     }
 }
