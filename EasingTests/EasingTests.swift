@@ -15,8 +15,8 @@ class EasingTests: XCTestCase
     {
         for easingCurve : EasingCurve in [.linear, .sine, .bounce, .circular, .cubic, .elastic]
         {
-            XCTAssertEqualWithAccuracy(easingCurve.function(0), 0, accuracy: 0.0001)
-            XCTAssertEqualWithAccuracy(easingCurve.function(1), 1, accuracy: 0.0001)
+            XCTAssertEqual(easingCurve.function(0), 0, accuracy: 0.0001)
+            XCTAssertEqual(easingCurve.function(1), 1, accuracy: 0.0001)
         }
     }
 }

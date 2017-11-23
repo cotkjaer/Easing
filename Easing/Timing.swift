@@ -6,11 +6,13 @@
 //  Copyright © 2015 Christian Otkjær. All rights reserved.
 //
 
-private let π = M_PI
+private let π = Double.pi
+private let π_2 = Double.pi / 2
+private let π_4 = Double.pi / 4
 
-private let π_13_2 = M_PI_2 * 13
+private let π_13_2 = π_2 * 13
 
-private let π_1_8 = M_PI_4 / 2
+private let π_1_8 = π_4 / 2
 private let π_5_8 = π_1_8 * 5
 private let π_10_8 = π_1_8 * 10
 private let π_11_8 = π_1_8 * 11
